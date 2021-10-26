@@ -1,0 +1,79 @@
+.row {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 20px 10px 0 10px;
+    background: #F0F0F0;
+}
+
+img {
+    width: 12px;
+    height: 12px;
+}
+
+input {
+    border: none;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.favicon {
+    width: 20px;
+    padding: 10px;
+    margin-right: 5px;
+    text-align: center;
+    background-color: darkcyan;
+    border-radius: 50%;
+    color: white;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.message {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.info {
+    width: 155px;
+}
+
+.online {
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background: #00FF00;
+    position: absolute;
+    top: 14px;
+    left: 32px;
+}
+
+.users {
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+

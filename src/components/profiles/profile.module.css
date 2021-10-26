@@ -1,0 +1,85 @@
+.row {
+    width: 20%;
+    background: #F0F0F0;
+}
+
+.favicon {
+    width: 18px;
+    padding: 26px;
+    margin: auto;
+    text-align: center;
+    background-color: darkcyan;
+    border-radius: 50%;
+    color: white;
+}
+
+.profile {
+    width: 130px;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.user {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+}
+
+.link {
+    margin-bottom: 10px;
+    color: #808080;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    color: #B8B8B8;
+}
+
+.social img {
+    margin-right: 5px;
+}
+
+.container {
+    margin: 40px 25px;
+}
+
+.social {
+    margin-top: 10px;
+    padding: 0 20px 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.icons {
+    width: 20px;
+    color: #B8B8B8;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.media .item {
+    width: 30px;
+    height: 20px;
+    background-color: blue;
+    margin-right: 5px;
+    border-radius: 3px;
+}
