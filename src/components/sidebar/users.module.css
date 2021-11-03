@@ -29,8 +29,25 @@ input {
     position: relative;
     flex-wrap: wrap;
     align-items: center;
-    padding: 15px;
+    padding: 15px 11px;
     border-bottom: 1px solid #E0E0E0;
+}
+
+.user:hover {
+    background-color: #989898;
+    color: white;
+}
+
+.active {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px 11px;
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #989898;
+    color: white;
 }
 
 .favicon {
@@ -69,10 +86,19 @@ input {
     left: 32px;
 }
 
+.none {
+    display: none;
+}
+
 .users {
+    margin-top: 20px;
     height: 600px;
     overflow: hidden;
     overflow-y: scroll;
+}
+
+.input {
+    width: 100%;
 }
 
 

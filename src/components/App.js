@@ -1,9 +1,13 @@
 import Chat from "./Chat";
+import { Route } from "react-router-dom";
 
 function App() {
+
   return (
     <div>
-        <Chat />
+        <Route path="/:id?">
+            <Chat />
+        </Route>
     </div>
   );
 }

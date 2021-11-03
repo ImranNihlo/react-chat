@@ -3,12 +3,19 @@ import style from "./profile.module.css";
 import Profile from "./Profile";
 import Social from "./Social";
 import Media from "./Media";
+import {useSelector} from "react-redux";
 
 function Profiles(props) {
+    const change = useSelector(state => state.contacts.change);
+
+    if (change) {
+        return null
+    }
+
     return (
-        <div className={style.row}>
-            <Profile />
-            <Social />
+        <div id="active" className={style.active}>
+            <Profile contacts={props.contacts}/>
+            <Social contacts={props.contacts}/>
             <Media />
         </div>
     );

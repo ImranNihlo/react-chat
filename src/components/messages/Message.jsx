@@ -1,49 +1,60 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from "./messages.module.css";
+import {useDispatch} from "react-redux";
+import {deleteMessage} from "../../redux/actions";
+import {useParams} from "react-router-dom";
 
 function Message(props) {
+    const dispatch = useDispatch();
+    const id = useParams().id;
+
+    const handleDeleteMessage = () => {
+        dispatch(deleteMessage(id))
+    }
+
+    function scrollDown() {
+        document.getElementById('scroll').scrollTop =  document.getElementById('scroll').scrollHeight
+    }
+
+    useEffect(() => scrollDown());
+
     return (
-        <div className={style.message}>
-            <div className={style.incoming}>
-                Hello!
-            </div>
-            <div className={style.incoming}>
-                Lorem ipsum
-            </div>
-            <div className={style.vizov}>
-                Пропущенный вызов
-            </div>
-            <div className={style.outgoing}>
-                <div className={style.favicon}>
-                    К
-                </div>
-                <div className={style.text}>
-                    Ipsum dolor, lorem
-                </div>
-            </div>
-            <div className={style.incoming}>
-                dus amet!
-            </div>
-            <div className={style.lorem}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-            </div>
-            <div className={style.lorem}>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-            </div>
-            <div className={style.lorem}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat.
-            </div>
-            <div className={style.lorem}>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-            </div>
+        <div id="scroll" className={style.message}>
+            {props.messages.map(item => {
+                return item.toUserId !== props.profile._id ? (
+                    <div key={item._id} className={props.change ? style['incoming-max'] : style.incoming}>
+                        <div className={style['message-flex']}>
+                            <div>
+                                {item.content}
+                            </div>
+                            <div className={style["message-delete"]}>
+                                <i
+                                    className="fas fa-trash-alt"
+                                    onClick={handleDeleteMessage}
+                                >
+                                </i>
+                            </div>
+                        </div>
+                        <div className={style.date}>
+                            {item.time.substr(11,5)}
+                            {item.read ? <i className="fas fa-check-square"></i> : <i className="fas fa-check"></i> }
+                        </div>
+                    </div>
+                ) : (
+                    <div key={item._id} className={style.outgoing}>
+                        <div className={style.favicon}>
+                            К
+                        </div>
+                        <div className={style.text}>
+                            {item.content}
+                            <div className={style.date}>
+                                {item.time.substr(11,5)} <i className="fas fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
+            <div id="down"/>
         </div>
     );
 }
