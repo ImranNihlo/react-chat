@@ -43,7 +43,6 @@ const messagesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filter: action.payload,
-                items: state.items.filter(item => item.content.indexOf(state.filter) > -1)
             }
 
         default: return state;

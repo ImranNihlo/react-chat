@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import style from "./messages.module.css";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {deleteMessage} from "../../redux/actions";
 import {useParams} from "react-router-dom";
 
@@ -18,9 +18,13 @@ function Message(props) {
 
     useEffect(() => scrollDown());
 
+    const filter = useSelector(state => state.messages.filter);
+
+    const filtered = props.messages.filter(item => item.content.indexOf(filter) > -1);
+
     return (
         <div id="scroll" className={style.message}>
-            {props.messages.map(item => {
+            {filtered.map(item => {
                 return item.toUserId !== props.profile._id ? (
                     <div key={item._id} className={props.change ? style['incoming-max'] : style.incoming}>
                         <div className={style['message-flex']}>

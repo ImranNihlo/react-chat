@@ -1,11 +1,16 @@
 import React from 'react';
 import style from "./users.module.css";
 import User from "./User";
+import {useSelector} from "react-redux";
 
 function Users(props) {
+    const filter = useSelector(state => state.contacts.filter);
+
+    const filtered = props.contacts.filter(item => item.fullname.indexOf(filter) > -1);
+
     return (
         <div className={style.users}>
-                {props.contacts.map(contact => {
+                {filtered.map(contact => {
                     return <User key={contact._id} contact={contact}/>
                 })}
         </div>

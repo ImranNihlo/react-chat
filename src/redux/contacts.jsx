@@ -30,7 +30,6 @@ const contactsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filter: action.payload,
-                items: state.items.filter(item => item.fullname.indexOf(state.filter) > -1)
             }
 
         default: return state;
