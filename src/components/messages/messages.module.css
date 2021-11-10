@@ -111,6 +111,10 @@ header {
     overflow-y: scroll;
 }
 
+.message a {
+    color: white;
+}
+
 .enter {
     display: flex;
     justify-content: space-between;
