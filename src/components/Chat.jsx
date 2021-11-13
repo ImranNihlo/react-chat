@@ -15,7 +15,7 @@ function Chat(props) {
         dispatch(contactLoad())
         dispatch(profileLoad())
         dispatch(messagesLoad(id))
-    }, [id]);
+    }, [dispatch, id]);
 
     const contacts = useSelector(state => state.contacts.items);
     const messages = useSelector(state => state.messages.items);

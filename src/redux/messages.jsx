@@ -30,13 +30,7 @@ const messagesReducer = (state = initialState, action) => {
         case "delete/messages/success":
             return {
                 ...state,
-                items: state.items.filter(message => {
-                    if (message._id === action.payload) {
-                        return false
-                    } else {
-                        return true
-                    }
-                })
+                items: state.items.filter(message => message._id !== action.payload)
             }
 
         case "filter/messages":

@@ -80,7 +80,7 @@ export const deleteMessage = (id) => {
             .then(json => {
                 dispatch({
                     type: "delete/messages/success",
-                    payload: json
+                    payload: id
                 })
             })
     }
