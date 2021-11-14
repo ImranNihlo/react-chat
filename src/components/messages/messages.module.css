@@ -1,11 +1,5 @@
 .row {
-    width: 60%;
-    box-sizing: border-box;
-    padding: 0 40px;
-}
-
-.max {
-    width: 80%;
+    flex: 1;
     box-sizing: border-box;
     padding: 0 40px;
 }
@@ -21,19 +15,7 @@ header {
 
 .incoming {
     width: 230px;
-    position: relative;
-    left: 520px;
-    color: white;
-    border-radius: 10px 10px 0 10px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
-    padding: 5px;
-    margin-top: 15px;
-}
-
-.incoming-max {
-    width: 230px;
-    position: relative;
-    left: 800px;
+    align-self: flex-end;
     color: white;
     border-radius: 10px 10px 0 10px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -43,8 +25,7 @@ header {
 
 .lorem {
     width: 250px;
-    position: relative;
-    left: 500px;
+    align-self: center;
     color: white;
     border-radius: 10px 10px 0 10px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -107,6 +88,8 @@ header {
 
 .message {
     height: 600px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -166,4 +149,8 @@ header {
 .message-flex {
     display: flex;
     justify-content: space-between;
+}
+
+.changing {
+    width: 16px;
 }

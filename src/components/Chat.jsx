@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import Messages from "./messages";
 import Profiles from "./profiles";
-import style from "./chat.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {contactLoad, messagesLoad, profileLoad} from "../redux/actions";
 import {useParams} from "react-router-dom";
 import Sidebar from "./sidebar";
+import {CSSTransition} from "react-transition-group";
 
 function Chat(props) {
     const dispatch = useDispatch();
@@ -20,12 +20,15 @@ function Chat(props) {
     const contacts = useSelector(state => state.contacts.items);
     const messages = useSelector(state => state.messages.items);
     const profile = useSelector(state => state.profile.profile);
+    const change = useSelector(state => state.contacts.change);
 
     return (
-        <div className={style.main}>
+        <div className="main">
             <Sidebar contacts={contacts}/>
             <Messages contacts={contacts} messages={messages} profile={profile}/>
-            <Profiles contacts={contacts}/>
+            <CSSTransition in={change} unmountOnExit timeout={1000} classNames="profile">
+                <Profiles contacts={contacts} change={change}/>
+            </CSSTransition>
         </div>
     );
 }

@@ -28,7 +28,7 @@ function Input(props) {
                 <div className={style["icons-clip"]}>
                     <i className="fas fa-paperclip"></i>
                 </div>
-                <div onClick={handleAddClick}>
+                <div className={style.changing} onClick={handleAddClick}>
                     {text.length > 0 ? <i className="fas fa-paper-plane"></i> : <i className="fas fa-microphone"></i>}
                 </div>
             </div>

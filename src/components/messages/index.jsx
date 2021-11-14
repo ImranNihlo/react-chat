@@ -4,11 +4,9 @@ import Header from "./Header";
 import Message from "./Message";
 import Input from "./Input";
 import {useParams} from "react-router-dom";
-import {useSelector} from "react-redux";
 
 function Messages(props) {
     const id = useParams().id;
-    const change = useSelector(state => state.contacts.change);
 
     if (!id) {
         return <div className={style.row}>
@@ -19,9 +17,9 @@ function Messages(props) {
     }
 
     return (
-        <div className={change ? style.max : style.row}>
+        <div className={style.row}>
             <Header contacts={props.contacts}/>
-            <Message messages={props.messages} profile={props.profile} change={change} />
+            <Message messages={props.messages} profile={props.profile} />
             <Input contacts={props.contacts}/>
         </div>
     );

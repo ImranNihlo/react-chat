@@ -24,7 +24,7 @@ function Message(props) {
         <div id="scroll" className={style.message}>
                 {filtered.map(item => {
                     return item.toUserId !== props.profile._id ? (
-                        <div key={item._id} className={props.change ? style['incoming-max'] : style.incoming}>
+                        <div key={item._id} className={style.incoming}>
                             <div className={style['message-flex']}>
                                 <div>
                                     {item.content}

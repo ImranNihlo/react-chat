@@ -1,6 +1,8 @@
 .active {
     width: 20%;
     background: #F0F0F0;
+    transition: width 1000ms;
+    overflow: hidden;
 }
 
 .favicon {

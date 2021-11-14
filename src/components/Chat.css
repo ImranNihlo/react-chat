@@ -12,3 +12,16 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.profile-exit {
+    width: 0;
+}
+
+.profile-enter {
+    width: 0;
+}
+
+.profile-enter-active {
+    width: 20%;
+}
+
