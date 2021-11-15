@@ -144,6 +144,8 @@ header {
 .null {
     padding-top: 50%;
     text-align: center;
+    color: blue;
+    font-size: 20px;
 }
 
 .message-flex {
@@ -153,4 +155,11 @@ header {
 
 .changing {
     width: 16px;
+}
+
+.load {
+    margin: auto;
+    text-align: center;
+    color: blue;
+    font-size: 20px;
 }
