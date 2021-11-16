@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import style from "./messages.module.css";
 import {useDispatch} from "react-redux";
 import {deleteMessage} from "../../redux/actions";
+import PropTypes from "prop-types";
 
 function IncomingMessages(props) {
     const dispatch = useDispatch();
@@ -36,6 +37,13 @@ function IncomingMessages(props) {
             </div>
         </div>
     );
+}
+
+IncomingMessages.propTypes = {
+    content: PropTypes.string,
+    _id: PropTypes.string,
+    time: PropTypes.string,
+    read: PropTypes.bool
 }
 
 export default IncomingMessages;

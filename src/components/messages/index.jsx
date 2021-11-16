@@ -4,6 +4,7 @@ import Header from "./Header";
 import Message from "./Message";
 import Input from "./Input";
 import {useParams} from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Messages(props) {
     const id = useParams().id;
@@ -19,10 +20,16 @@ function Messages(props) {
     return (
         <div className={style.row}>
             <Header contacts={props.contacts}/>
-            <Message messages={props.messages} profile={props.profile} />
+            <Message messages={props.messages} profileId={props.profileId} />
             <Input contacts={props.contacts}/>
         </div>
     );
+}
+
+Messages.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    messages: PropTypes.array.isRequired,
+    profileId: PropTypes.string
 }
 
 export default Messages;

@@ -2,6 +2,7 @@ import React from 'react';
 import style from "./users.module.css";
 import User from "./User";
 import {useSelector} from "react-redux";
+import PropTypes from "prop-types";
 
 function Users(props) {
     const filter = useSelector(state => state.contacts.filter);
@@ -15,6 +16,10 @@ function Users(props) {
                 })}
         </div>
     )
+}
+
+Users.propTypes = {
+    contacts: PropTypes.array.isRequired
 }
 
 export default Users;

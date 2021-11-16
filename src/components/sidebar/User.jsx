@@ -1,6 +1,7 @@
 import React from 'react';
 import style from "./users.module.css";
 import {Link, useParams} from "react-router-dom";
+import PropTypes from "prop-types";
 
 function User(props) {
     const id = useParams().id;
@@ -28,6 +29,14 @@ function User(props) {
             </div>
         </Link>
     );
+}
+
+User.propTypes = {
+    _id: PropTypes.string,
+    fullname: PropTypes.string,
+    content: PropTypes.string,
+    time: PropTypes.string,
+    online: PropTypes.bool
 }
 
 export default User;

@@ -19,13 +19,13 @@ function Chat(props) {
 
     const contacts = useSelector(state => state.contacts.items);
     const messages = useSelector(state => state.messages.items);
-    const profile = useSelector(state => state.profile.profile);
+    const profileId = useSelector(state => state.profile.profile._id);
     const change = useSelector(state => state.contacts.change);
 
     return (
         <div className="main">
             <Sidebar contacts={contacts}/>
-            <Messages contacts={contacts} messages={messages} profile={profile}/>
+            <Messages contacts={contacts} messages={messages} profileId={profileId}/>
             <CSSTransition in={change} unmountOnExit timeout={1000} classNames="profile">
                 <Profiles contacts={contacts} change={change}/>
             </CSSTransition>

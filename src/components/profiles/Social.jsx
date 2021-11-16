@@ -1,54 +1,46 @@
 import React from 'react';
 import style from "./profile.module.css";
-import {useParams} from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Social(props) {
-    const id = useParams().id;
-
     return (
-        <div className={style.container}>
-            <p className={style.bold}>Social</p>
-            {props.contacts.map(contact => {
-                if (id === contact._id) {
-                    return <div key={contact._id} className={style.social}>
-                        {contact.socials === undefined ? '' : (
-                            <div className={style.item}>
-                                <div className={style.icons}>
-                                    <i className="fab fa-instagram"></i>
-                                </div>
-                                <div className={style.bold}>
-                                    {contact.socials.instagram}
-                                </div>
-                            </div>
-                        )}
-                        {contact.socials === undefined ? '' : (
-                            <div className={style.item}>
-                                <div className={style.icons}>
-                                    <i className="fab fa-twitter"></i>
-                                </div>
-                                <div className={style.bold}>
-                                    {contact.socials.facebook}
-                                </div>
-                            </div>
-                        )}
-                        {contact.socials === undefined ? '' : (
-                            <div className={style.item}>
-                                <div className={style.icons}>
-                                    <i className="fab fa-facebook-f"></i>
-                                </div>
-                                <div className={style.bold}>
-                                    {contact.socials.twitter}
-                                </div>
-                            </div>
-                        )}
+        <div className={style.social}>
+            {props.contact.socials === undefined ? '' : (
+                <div className={style.item}>
+                    <div className={style.icons}>
+                        <i className="fab fa-instagram"></i>
                     </div>
-                } else {
-                    return false
-                };
-            })}
+                    <div className={style.bold}>
+                        {props.contact.socials.instagram}
+                    </div>
+                </div>
+            )}
+            {props.contact.socials === undefined ? '' : (
+                <div className={style.item}>
+                    <div className={style.icons}>
+                        <i className="fab fa-twitter"></i>
+                    </div>
+                    <div className={style.bold}>
+                        {props.contact.socials.facebook}
+                    </div>
+                </div>
+            )}
+            {props.contact.socials === undefined ? '' : (
+                <div className={style.item}>
+                    <div className={style.icons}>
+                        <i className="fab fa-facebook-f"></i>
+                    </div>
+                    <div className={style.bold}>
+                        {props.contact.socials.twitter}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
 
-export default Social;
+Social.propTypes = {
+    socials: PropTypes.array
+}
 
+export default Social;

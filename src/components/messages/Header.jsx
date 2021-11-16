@@ -3,6 +3,7 @@ import style from "./messages.module.css";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {changeProfile, searchMessages} from "../../redux/actions";
+import PropTypes from "prop-types";
 
 function Header(props) {
     const id = useParams().id;
@@ -60,6 +61,10 @@ function Header(props) {
             </div>
         </header>
     );
+}
+
+Header.propTypes = {
+    contacts: PropTypes.array.isRequired
 }
 
 export default Header;

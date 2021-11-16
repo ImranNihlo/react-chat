@@ -1,7 +1,9 @@
 import React from 'react';
 import style from "./messages.module.css";
+import PropTypes from "prop-types";
 
 function OutgoingMessages(props) {
+
     return (
         <div className={style.outgoing}>
             <div className={style.favicon}>
@@ -15,6 +17,11 @@ function OutgoingMessages(props) {
             </div>
         </div>
     );
+}
+
+OutgoingMessages.propTypes = {
+    messages: PropTypes.string,
+    time: PropTypes.string
 }
 
 export default OutgoingMessages;
