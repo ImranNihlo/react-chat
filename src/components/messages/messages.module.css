@@ -1,165 +1,175 @@
 .row {
-    flex: 1;
-    box-sizing: border-box;
-    padding: 0 40px;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 40px;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid gray;
-    font-weight: bold;
-    font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid gray;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .incoming {
-    width: 230px;
-    align-self: flex-end;
-    color: white;
-    border-radius: 10px 10px 0 10px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
-    padding: 5px;
-    margin-top: 15px;
+  width: 230px;
+  align-self: flex-end;
+  color: white;
+  border-radius: 10px 10px 0 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 90, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding: 5px;
+  margin-top: 15px;
 }
 
 .lorem {
-    width: 250px;
-    align-self: center;
-    color: white;
-    border-radius: 10px 10px 0 10px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
-    padding: 5px;
-    margin-top: 15px;
+  width: 250px;
+  align-self: center;
+  color: white;
+  border-radius: 10px 10px 0 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 90, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding: 5px;
+  margin-top: 15px;
 }
 
 .outgoing {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .text {
-    width: 170px;
-    background: linear-gradient(90deg, #b9deed, #efefef);
-    border-radius: 10px 10px 10px 0;
-    padding: 5px;
+  width: 170px;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+  border-radius: 10px 10px 10px 0;
+  padding: 5px;
 }
 
 .favicon {
-    width: 18px;
-    padding: 8px;
-    margin-right: 5px;
-    text-align: center;
-    background-color: darkcyan;
-    border-radius: 50%;
-    color: white;
+  width: 18px;
+  padding: 8px;
+  margin-right: 5px;
+  text-align: center;
+  background-color: darkcyan;
+  border-radius: 50%;
+  color: white;
 }
 
 .vizov {
-    width: 160px;
-    margin: auto;
-    text-align: center;
-    margin-top: 15px;
-    background: linear-gradient(90deg, #b9deed, #efefef);
-    border-radius: 10px;
-    padding: 5px;
+  width: 160px;
+  margin: auto;
+  text-align: center;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .user {
-    width: 194px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 194px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .online {
-    width: 8px;
-    height: 8px;
-    margin-top: 2px;
-    border-radius: 50%;
-    margin-left: 10px;
-    background: #00FF00;
+  width: 8px;
+  height: 8px;
+  margin-top: 2px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background: #00ff00;
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .message {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    overflow-y: scroll;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .message a {
-    color: white;
+  color: white;
 }
 
 .enter {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid gray;
-    padding: 15px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  padding: 15px;
+  align-items: center;
 }
 
 .icons {
-    width: 194px;
-    display: flex;
-    justify-content: right;
-    color: black;
-    cursor: pointer;
+  width: 194px;
+  display: flex;
+  justify-content: right;
+  color: black;
+  cursor: pointer;
 }
 
 .message-delete {
-    color: black;
-    cursor: pointer;
-    opacity: 0;
+  color: black;
+  cursor: pointer;
+  opacity: 0;
 }
 
 .message-delete:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .icons-clip {
-    transform: rotate(-45deg);
-    margin-right: 20px;
+  transform: rotate(-45deg);
+  margin-right: 20px;
 }
 
 .date {
-    text-align: right;
+  text-align: right;
 }
 
 .input {
-    width: 90%;
+  width: 90%;
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .null {
-    padding-top: 50%;
-    text-align: center;
-    color: blue;
-    font-size: 20px;
+  padding-top: 50%;
+  text-align: center;
+  color: blue;
+  font-size: 20px;
 }
 
 .message-flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .changing {
-    width: 16px;
+  width: 16px;
 }
 
 .load {
-    margin: auto;
-    text-align: center;
-    color: blue;
-    font-size: 20px;
+  margin: auto;
+  text-align: center;
+  color: blue;
+  font-size: 20px;
 }
