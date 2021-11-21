@@ -50,6 +50,9 @@ export const messagesLoad = (id) => {
 
 export const addMessage = (text, date, id) => {
   return (dispatch) => {
+    dispatch ({
+      type: 'message/add/start'
+    })
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
       body: JSON.stringify({
@@ -66,7 +69,7 @@ export const addMessage = (text, date, id) => {
       .then((response) => response.json())
       .then((json) => {
         dispatch({
-          type: 'add/comment',
+          type: 'message/add/success',
           payload: json,
         });
       });

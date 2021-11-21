@@ -2,6 +2,7 @@ const initialState = {
   items: [],
   filter: '',
   loading: false,
+  loadingMessage: false
 };
 
 const messagesReducer = (state = initialState, action) => {
@@ -19,10 +20,17 @@ const messagesReducer = (state = initialState, action) => {
         loading: false,
       };
 
-    case 'add/messages':
+    case 'message/add/start':
       return {
         ...state,
-        items: [{ content: action.payload.text, time: action.payload.date }],
+        loadingMessage: true
+      }
+
+    case 'message/add/success':
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+        loadingMessage: false
       };
 
     case 'delete/messages/success':
